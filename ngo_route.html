@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pickup Route</title>
+
+<style>
+:root{
+    --bg1:#020617;
+    --bg2:#0f172a;
+    --bg3:#1e293b;
+    --card:#0b1220;
+    --border:#1e293b;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --accent:#22c55e;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",system-ui,sans-serif}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+    color:var(--text);
+    animation:fade .4s ease;
+}
+@keyframes fade{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.wrapper{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.card{
+    width:420px;
+    padding:30px;
+    background:linear-gradient(180deg,#0b1220,#020617);
+    border-radius:22px;
+    border:1px solid var(--border);
+    box-shadow:0 22px 50px rgba(0,0,0,.65);
+}
+
+h2{margin-bottom:4px}
+.sub{color:var(--muted);margin-bottom:10px;font-size:14px}
+.status-text{
+    margin-bottom:20px;
+    font-size:15px;
+    color:#a7f3d0;
+}
+
+/* ROUTE */
+.route{
+    position:relative;
+    height:260px;
+    margin-bottom:26px;
+}
+.line{
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:4px;
+    height:240px;
+    background:#1e293b;
+    transform:translateX(-50%);
+    border-radius:4px;
+}
+
+/* STOPS */
+.stop{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#334155;
+}
+.stop.active{
+    background:var(--accent);
+    box-shadow:0 0 14px var(--accent);
+}
+
+.s1{top:10px}
+.s2{top:90px}
+.s3{top:170px}
+.s4{top:240px}
+
+/* TRUCK */
+.truck{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:26px;
+    transition:top 1.2s ease;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:28px;
+    font-weight:600;
+    cursor:pointer;
+    background:#334155;
+    color:var(--text);
+    opacity:.5;
+}
+button.active{
+    background:linear-gradient(135deg,#22c55e,#4ade80);
+    color:#020617;
+    opacity:1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="card">
+    <h2>Pickup in Progress 🚚</h2>
+    <p class="sub">AI-coordinated rescue route</p>
+    <div id="status" class="status-text">Truck at Kitchen</div>
+
+    <div class="route">
+        <div class="line"></div>
+
+        <div class="stop s1"></div>
+        <div class="stop s2"></div>
+        <div class="stop s3"></div>
+        <div class="stop s4"></div>
+
+        <div id="truck" class="truck" style="top:10px">🚚</div>
+    </div>
+
+    <button id="doneBtn" onclick="location.href='index.html'">
+        Waiting for Delivery…
+    </button>
+</div>
+</div>
+
+<script>
+const truck = document.getElementById("truck")
+const stops = document.querySelectorAll(".stop")
+const status = document.getElementById("status")
+const btn = document.getElementById("doneBtn")
+
+const positions = [10, 90, 170, 240]
+const texts = [
+    "Food collected from Kitchen 🍲",
+    "Local pickup completed 🏠",
+    "Arrived at NGO gate 🤝",
+    "Food Delivered Successfully ✔"
+]
+
+let index = 0
+
+function moveTruck(){
+
+    truck.style.top = positions[index] + "px"
+
+    stops.forEach(s => s.classList.remove("active"))
+    stops[index].classList.add("active")
+
+    status.innerText = texts[index]
+
+    if(index === positions.length - 1){
+        btn.classList.add("active")
+        btn.innerText = "Delivery Completed ✔ Going to NGO…"
+
+        setTimeout(()=>{
+            location.href = "ngo.html"
+        },1500)
+        return
+    }
+
+    index++
+    setTimeout(moveTruck, 1000)
+}
+
+setTimeout(moveTruck, 500)
+</script>
+
+
+
+</body>
+</html>

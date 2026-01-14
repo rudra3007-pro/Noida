@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home Cook Dashboard</title>
+
+<style>
+:root{
+    --primary:#006d77;
+    --primary-light:#83c5be;
+    --accent:#ff7a00;
+    --danger:#d62828;
+
+    --bg-dark-1:#020617;
+    --bg-dark-2:#0f172a;
+    --bg-dark-3:#1e293b;
+
+    --card:#0b1220;
+    --border:#1e293b;
+
+    --text:#f8fafc;
+    --muted:#94a3b8;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",system-ui,sans-serif;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg-dark-1),var(--bg-dark-2),var(--bg-dark-3));
+    color:var(--text);
+    animation:fade .4s ease;
+}
+@keyframes fade{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* HEADER */
+/* HEADER CONTAINER */
+.top-header{
+    margin:24px 40px 12px;
+    padding:22px 28px;
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.02)
+    );
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 24px 48px rgba(0,0,0,.65),
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LEFT GROUP */
+.header-content{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/* ACCENT BAR */
+.header-accent{
+    width:5px;
+    height:52px;
+    border-radius:6px;
+    background:linear-gradient(180deg,#34d399,#22c55e);
+    box-shadow:0 0 12px rgba(34,197,94,.6);
+}
+
+/* TEXT */
+.header-text h1{
+    font-size:26px;
+    font-weight:600;
+    color:#f8fafc;
+    letter-spacing:.2px;
+}
+.header-text p{
+    margin-top:4px;
+    font-size:13px;
+    color:#94a3b8;
+}
+
+/* STATUS PILL */
+.header-status{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(34,197,94,.18);
+    color:#4ade80;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* PULSE DOT */
+.header-status .pulse{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#22c55e;
+    box-shadow:0 0 10px #22c55e;
+    animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);opacity:1}
+    50%{transform:scale(1.4);opacity:.6}
+    100%{transform:scale(1);opacity:1}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .top-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+        margin:16px;
+    }
+}
+
+
+/* GRID */
+.dashboard{
+    padding:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:32px;
+}
+
+/* CARD */
+.card{
+    background:linear-gradient(180deg,#0b1220,#020617);
+    border-radius:20px;
+    padding:26px;
+    border:1px solid var(--border);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.65),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    transition:.35s;
+}
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* TITLE */
+.card h3{
+    font-size:21px;
+    margin-bottom:22px;
+    color:#e2e8f0;
+}
+
+/* ORDER ITEM */
+.order-item{
+    padding:16px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #1e293b;
+}
+.order-item:last-child{border-bottom:none}
+
+.order-item strong{
+    font-size:17px;
+}
+.order-item p{
+    font-size:13px;
+    color:var(--muted);
+}
+
+/* STATUS */
+.status{
+    margin-top:6px;
+    display:inline-block;
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+}
+.active{background:#064e3b;color:#34d399}
+.paused{background:#3b2f1e;color:#fbbf24}
+.rejected{background:#3a0d0d;color:#f87171}
+
+/* BUTTONS */
+.btns{
+    display:flex;
+    gap:10px;
+}
+button{
+    border:none;
+    padding:9px 16px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    color:#020617;
+    transition:.25s;
+}
+.accept{
+    background:linear-gradient(135deg,#34d399,#10b981);
+}
+.pause{
+    background:linear-gradient(135deg,#fbbf24,#f59e0b);
+}
+.reject{
+    background:linear-gradient(135deg,#fb7185,#e11d48);
+}
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 8px 20px rgba(0,0,0,.6);
+}
+
+/* SURPLUS */
+.surplus{
+    background:linear-gradient(135deg,#052e2b,#020617);
+    border-left:6px solid var(--accent);
+}
+.surplus p{
+    font-size:17px;
+    margin:16px 0 22px;
+    color:#cbd5f5;
+}
+.surplus button{
+    background:linear-gradient(135deg,#ff7a00,#ff9f1c);
+    color:#020617;
+    padding:12px 22px;
+    font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    header{font-size:22px;padding:22px}
+    .dashboard{padding:24px}
+}
+.stat{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 0;
+    border-bottom:1px solid #1e293b;
+}
+.stat:last-child{border-bottom:none}
+
+.stat strong{font-size:16px}
+.stat span{color:var(--muted);font-size:14px}
+.reset{
+    width:100%;
+    margin-top:16px;
+    padding:12px;
+    border:none;
+    border-radius:22px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+    color:#020617;
+    transition:.25s;
+}
+.reset:hover{
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,.6);
+}
+
+
+.bar{
+    margin-top:18px;
+    height:10px;
+    background:#020617;
+    border-radius:10px;
+    overflow:hidden;
+}
+.fill{
+    height:100%;
+    width:65%;
+    background:linear-gradient(90deg,#22c55e,#4ade80);
+    animation:grow 1.2s ease;
+}
+@keyframes grow{
+    from{width:0}
+    to{width:65%}
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="top-header">
+    <div class="header-content">
+        <div class="header-accent"></div>
+
+        <div class="header-text">
+            <h1>Home Cook Operations</h1>
+            <p>Manage orders, surplus & daily kitchen flow</p>
+        </div>
+    </div>
+
+    <div class="header-status">
+        <span class="pulse"></span>
+        Kitchen Active
+    </div>
+</header>
+
+
+<section class="dashboard">
+
+<div class="card">
+    <h3>Order Control</h3>
+
+    <div class="order-item">
+        <div>
+            <strong>Dal Rice</strong>
+            <p>Orders: 18</p>
+            <span id="dalStatus" class="status active">Active</span>
+        </div>
+        <div class="btns">
+            <button class="accept" onclick="setStatus('dal','Active')">Accept</button>
+            <button class="pause" onclick="setStatus('dal','Paused')">Pause</button>
+            <button class="reject" onclick="setStatus('dal','Rejected')">Reject</button>
+        </div>
+    </div>
+
+    <div class="order-item">
+        <div>
+            <strong>Chapati Sabzi</strong>
+            <p>Orders: 12</p>
+            <span id="chapatiStatus" class="status active">Active</span>
+        </div>
+        <div class="btns">
+            <button class="accept" onclick="setStatus('chapati','Active')">Accept</button>
+            <button class="pause" onclick="setStatus('chapati','Paused')">Pause</button>
+            <button class="reject" onclick="setStatus('chapati','Rejected')">Reject</button>
+        </div>
+    </div>
+</div>
+
+<div class="card surplus">
+    <h3>Surplus Detected</h3>
+    <p>6 fresh plates ready for redistribution</p>
+    <button onclick="navigate('surplus_timeline.html')">
+        Manage Surplus
+    </button>
+</div>
+<div class="card">
+    <h3>Surplus Analytics</h3>
+
+    <div class="stat">
+        <strong>Today</strong>
+        <span id="todayCount">0 plates donated</span>
+
+    </div>
+
+    <div class="stat">
+        <strong>This Week</strong>
+        <span id="weekCount">0 plates saved</span>
+
+    </div>
+
+    <div class="stat">
+        <strong>Impact</strong>
+        <span id="peopleCount">~0 people fed</span>
+
+    </div>
+
+    <div class="bar">
+        <div class="fill"></div>
+    </div>
+    <button class="reset" onclick="resetAnalytics()">
+    Reset Surplus Analytics ♻
+</button>
+
+</div>
+
+
+</section>
+
+<script>
+function resetAnalytics(){
+    localStorage.setItem("todaySurplus", 0)
+    localStorage.setItem("weekSurplus", 0)
+
+    document.getElementById("todayCount").innerText = "0 plates donated"
+    document.getElementById("weekCount").innerText = "0 plates saved"
+    document.getElementById("peopleCount").innerText = "~0 people fed"
+}
+
+
+function setStatus(dish,state){
+    const badge=document.getElementById(dish+"Status")
+    badge.innerText=state
+    badge.className="status "+state.toLowerCase()
+}
+function navigate(page){
+    document.body.style.opacity="0"
+    setTimeout(()=>location.href=page,300)
+}
+</script>
+<script>
+const today = Number(localStorage.getItem("todaySurplus")) || 0
+const week = Number(localStorage.getItem("weekSurplus")) || 0
+
+const todayEl = document.getElementById("todayCount")
+const weekEl = document.getElementById("weekCount")
+const peopleEl = document.getElementById("peopleCount")
+
+if(todayEl) todayEl.innerText = today + " plates donated"
+if(weekEl) weekEl.innerText = week + " plates saved"
+if(peopleEl) peopleEl.innerText = "~" + Math.floor(week * 0.5) + " people fed"
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NGO index</title>
+
+<style>
+:root{
+    --bg1:#020617;
+    --bg2:#0f172a;
+    --bg3:#1e293b;
+    --card:#0b1220;
+    --border:#1e293b;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --success:#22c55e;
+    --accent:#ff7a00;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",system-ui,sans-serif;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+    color:var(--text);
+    animation:fade .4s ease;
+}
+@keyframes fade{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* CENTER */
+.wrapper{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* CARD */
+.card{
+    width:420px;
+    padding:32px;
+    background:linear-gradient(180deg,#0b1220,#020617);
+    border-radius:22px;
+    border:1px solid var(--border);
+    box-shadow:0 22px 50px rgba(0,0,0,.65);
+}
+
+h2{margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:18px}
+
+/* INFO */
+.info{
+    padding:14px 0;
+    border-bottom:1px solid #1e293b;
+    font-size:15px;
+}
+.info:last-child{border-bottom:none}
+
+/* STATUS */
+.badge{
+    display:inline-block;
+    margin:18px 0;
+    padding:8px 18px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    background:#064e3b;
+    color:#34d399;
+}
+
+/* BUTTONS */
+button{
+    width:100%;
+    padding:13px;
+    margin-top:14px;
+    border:none;
+    border-radius:28px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.confirm{
+    background:linear-gradient(135deg,#22c55e,#4ade80);
+    color:#020617;
+}
+.confirm:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(0,0,0,.6);
+}
+
+.back{
+    background:#1e293b;
+    color:var(--text);
+}
+.back:hover{background:#334155}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="card">
+    <h2>NGO Pickup index 🤝</h2>
+    <p class="sub">Food rescue & distribution status</p>
+
+    <div class="info">Pickup Time: <strong>6:00 PM</strong></div>
+    <div class="info">Meals Received: <strong>6 Plates</strong></div>
+    <div class="info">Delivery Area: <strong>Nearby Shelters</strong></div>
+
+    <span class="badge">Pickup Completed</span>
+
+    <button class="confirm" onclick="confirmDelivery()">
+    Confirm Distribution ✔
+</button>
+
+
+    <button class="back" onclick="location.href='index.html'">
+        ⬅ Back to index
+    </button>
+</div>
+</div>
+<script>
+function confirmDelivery(){
+    const today = Number(localStorage.getItem("todaySurplus")) || 0
+    const week = Number(localStorage.getItem("weekSurplus")) || 0
+
+    localStorage.setItem("todaySurplus", today + 6)
+    localStorage.setItem("weekSurplus", week + 6)
+
+    location.href = "index.html"
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Surplus Timeline</title>
+
+<style>
+:root{
+    --primary:#006d77;
+    --primary-light:#83c5be;
+    --accent:#ff7a00;
+
+    --bg-dark-1:#020617;
+    --bg-dark-2:#0f172a;
+    --bg-dark-3:#1e293b;
+
+    --card:#0b1220;
+    --border:#1e293b;
+
+    --text:#f8fafc;
+    --muted:#94a3b8;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",system-ui,sans-serif;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,var(--bg-dark-1),var(--bg-dark-2),var(--bg-dark-3));
+    color:var(--text);
+    animation:fade .4s ease;
+}
+@keyframes fade{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* CENTER */
+.wrapper{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+}
+
+/* CARD */
+.card{
+    width:420px;
+    background:linear-gradient(180deg,#0b1220,#020617);
+    border-radius:22px;
+    padding:30px;
+    border:1px solid var(--border);
+    box-shadow:
+        0 22px 50px rgba(0,0,0,.65),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    animation:pop .45s ease;
+}
+@keyframes pop{
+    from{opacity:0;transform:scale(.95)}
+    to{opacity:1;transform:scale(1)}
+}
+
+.card h2{
+    font-size:23px;
+    margin-bottom:6px;
+}
+
+.sub{
+    color:var(--muted);
+    margin-bottom:26px;
+    font-size:14px;
+}
+
+/* TIMELINE */
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:28px;
+}
+.step{
+    padding:14px 18px;
+    border-radius:16px;
+    background:#020617;
+    border:1px solid var(--border);
+    box-shadow:0 10px 24px rgba(0,0,0,.5);
+    animation:slide .5s ease forwards;
+    opacity:0;
+}
+.step:nth-child(1){animation-delay:.1s}
+.step:nth-child(2){animation-delay:.25s}
+.step:nth-child(3){animation-delay:.4s}
+.step:nth-child(4){animation-delay:.55s}
+
+@keyframes slide{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* BUTTONS */
+button{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:28px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.primary{
+    background:linear-gradient(135deg,#ff7a00,#ff9f1c);
+    color:#020617;
+    margin-bottom:12px;
+}
+.primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(0,0,0,.6);
+}
+
+.secondary{
+    background:#1e293b;
+    color:var(--text);
+}
+.secondary:hover{
+    background:#334155;
+}
+
+/* PAGE TRANSITION */
+.fade-out{
+    animation:fadeOut .35s ease forwards;
+}
+@keyframes fadeOut{
+    to{opacity:0;transform:translateY(-14px)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="card">
+        <h2>AI Surplus Detection 🌍</h2>
+        <p class="sub">6 fresh plates detected as safe surplus</p>
+
+        <div class="timeline">
+            <div class="step">✔ Surplus Identified</div>
+            <div class="step">✔ NGO Notified</div>
+            <div class="step">✔ Pickup Scheduled</div>
+            <div class="step">✔ Food Distributed</div>
+        </div>
+
+        <button class="primary" onclick="navigate('ngo_route.html')">
+
+            Confirm & Notify NGO
+        </button>
+        <button class="secondary" onclick="navigate('index.html')">
+            ⬅ Back to Dashboard
+        </button>
+    </div>
+</div>
+
+<script>
+function navigate(page){
+    document.body.classList.add("fade-out")
+    setTimeout(()=>location.href=page,300)
+}
+</script>
+
+</body>
+</html>
