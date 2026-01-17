@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/student/student-profile.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>Student Profile</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/pages/student/student-dashboard.html'">Dashboard</button>
+      <button onclick="location.href='/pages/student/progress.html'">Progress</button>
+      <button onclick="location.href='/pages/auth/login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="profile-wrapper">
+
+    <!-- Profile Overview -->
+    <section class="profile-overview">
+      <h2>Student Profile</h2>
+      <p>
+        This profile helps the AI understand how you learn,
+        so your learning path can be personalized.
+      </p>
+    </section>
+
+    <!-- Basic Information -->
+    <section class="profile-card card">
+      <h3>Basic Information</h3>
+
+      <div class="profile-row">
+        <span>Name</span>
+        <strong>Rahul Kumar</strong>
+      </div>
+
+      <div class="profile-row">
+        <span>Class</span>
+        <strong>Class 6</strong>
+      </div>
+
+      <div class="profile-row">
+        <span>Section</span>
+        <strong>B</strong>
+      </div>
+
+      <div class="profile-row">
+        <span>Student ID</span>
+        <strong>GS-06234</strong>
+      </div>
+    </section>
+
+    <!-- Learning Preferences -->
+    <section class="profile-card card">
+      <h3>Learning Preferences</h3>
+
+      <div class="profile-row">
+        <span>Preferred Language</span>
+        <strong>Hindi</strong>
+      </div>
+
+      <div class="profile-row">
+        <span>Content Style</span>
+        <strong>Visual + Examples</strong>
+      </div>
+
+      <div class="profile-row">
+        <span>Best Study Time</span>
+        <strong>6 PM – 8 PM</strong>
+      </div>
+    </section>
+
+    <!-- AI Learning Signals -->
+    <section class="profile-card card">
+      <h3>AI Learning Signals</h3>
+
+      <div class="profile-row">
+        <span>Learning Pace</span>
+        <strong>Moderate</strong>
+      </div>
+
+      <div class="profile-row">
+        <span>Revision Frequency</span>
+        <strong>High</strong>
+      </div>
+
+      <div class="profile-row">
+        <span>Concept Retention</span>
+        <strong>Medium</strong>
+      </div>
+
+      <p class="hint">
+        These signals update automatically based on your activity.
+      </p>
+    </section>
+
+    <!-- Actions -->
+    <section class="profile-actions">
+      <button class="secondary">
+        Edit Preferences
+      </button>
+
+      <button class="primary" onclick="location.href='/pages/student/learning-path.html'">
+        View Learning Path
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Student Profile & Personalization</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Analytics • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/teacher/class-analytics.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>Class Analytics</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='teacher-dashboard.html'">Dashboard</button>
+      <button onclick="location.href='login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="analytics-wrapper">
+
+    <!-- Overview -->
+    <section class="analytics-overview">
+      <h2>Class 6 • Mathematics</h2>
+      <p>
+        Concept-level performance insights to support
+        targeted teaching interventions.
+      </p>
+    </section>
+
+    <!-- Summary Metrics -->
+    <section class="metrics">
+
+      <div class="metric-card">
+        <h3>Class Mastery</h3>
+        <p class="metric">61%</p>
+        <span class="note">Average concept mastery</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Students at Risk</h3>
+        <p class="metric">7</p>
+        <span class="note">Below mastery threshold</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Strong Concepts</h3>
+        <p class="metric">3</p>
+        <span class="note">High-performing topics</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Weak Concepts</h3>
+        <p class="metric">2</p>
+        <span class="note">Need reinforcement</span>
+      </div>
+
+    </section>
+
+    <!-- Concept Heatmap -->
+    <section class="concept-heatmap card">
+      <h3>Concept Mastery Heatmap</h3>
+
+      <div class="heatmap-row strong">
+        <span>Understanding Fractions</span>
+        <strong>78%</strong>
+      </div>
+
+      <div class="heatmap-row strong">
+        <span>Numerator & Denominator</span>
+        <strong>74%</strong>
+      </div>
+
+      <div class="heatmap-row moderate">
+        <span>Equivalent Fractions</span>
+        <strong>59%</strong>
+      </div>
+
+      <div class="heatmap-row weak">
+        <span>Comparing Fractions</span>
+        <strong>42%</strong>
+      </div>
+    </section>
+
+    <!-- At-Risk Students -->
+    <section class="risk-students card">
+      <h3>At-Risk Students</h3>
+
+      <div class="student-row">
+        <span>Rahul Kumar</span>
+        <strong>Low retention</strong>
+      </div>
+
+      <div class="student-row">
+        <span>Neha Singh</span>
+        <strong>Repeated mistakes</strong>
+      </div>
+
+      <div class="student-row">
+        <span>Aman Verma</span>
+        <strong>Slow pace</strong>
+      </div>
+    </section>
+
+    <!-- AI Teaching Insights -->
+    <section class="ai-insights card">
+      <h3>AI Teaching Insights</h3>
+      <ul>
+        <li>📌 Revise <strong>Comparing Fractions</strong> before moving ahead</li>
+        <li>📌 Use visual examples for 6 students</li>
+        <li>📌 Short quizzes improve accuracy in this class</li>
+      </ul>
+    </section>
+
+    <!-- Actions -->
+    <section class="analytics-actions">
+      <button class="secondary">
+        Plan Revision Session
+      </button>
+
+      <button class="primary">
+        View Student Details
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Teacher Analytics & Insights</p>
+  </footer>
+
+</body>
+</html>

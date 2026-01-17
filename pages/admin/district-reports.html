@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>District Reports • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/admin/district-reports.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>District Reports</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/pages/admin/admin-dashboard.html'">Dashboard</button>
+      <button onclick="location.href='/pages/auth/login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= PAGE LAYOUT ================= -->
+  <div class="dashboard-layout">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+      <ul class="menu">
+        <li onclick="location.href='/pages/admin/admin-dashboard.html'">Dashboard</li>
+        <li class="active">District Reports</li>
+        <li>Schools</li>
+        <li>Teachers</li>
+        <li>Students</li>
+        <li>Settings</li>
+      </ul>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="dashboard-content">
+
+      <!-- Page Intro -->
+      <section class="page-intro">
+        <h2>District-wise Learning Analytics</h2>
+        <p>
+          Monitor academic performance, learning gaps, and engagement trends
+          across districts to support data-driven decisions.
+        </p>
+      </section>
+
+      <!-- Filters Section -->
+      <section class="filters card">
+        <h3>Generate Report</h3>
+
+        <div class="filter-grid">
+          <div class="filter-item">
+            <label>District</label>
+            <select>
+              <option>Select District</option>
+              <option>District A</option>
+              <option>District B</option>
+              <option>District C</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label>Class</label>
+            <select>
+              <option>Select Class</option>
+              <option>Class 5</option>
+              <option>Class 8</option>
+              <option>Class 10</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label>Subject</label>
+            <select>
+              <option>Select Subject</option>
+              <option>Mathematics</option>
+              <option>Science</option>
+              <option>English</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label>Time Period</label>
+            <select>
+              <option>Last 7 Days</option>
+              <option>Last 30 Days</option>
+              <option>Last Academic Year</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="primary">Generate Report</button>
+      </section>
+
+      <!-- Key Metrics -->
+      <section class="metrics">
+        <div class="metric-card">
+          <h4>Average Concept Mastery</h4>
+          <p class="metric">71%</p>
+        </div>
+
+        <div class="metric-card">
+          <h4>Students At Risk</h4>
+          <p class="metric">18%</p>
+        </div>
+
+        <div class="metric-card">
+          <h4>Active Schools</h4>
+          <p class="metric">92%</p>
+        </div>
+
+        <div class="metric-card">
+          <h4>Avg Engagement Time</h4>
+          <p class="metric">38 min/day</p>
+        </div>
+      </section>
+
+      <!-- Charts Section -->
+      <section class="analytics">
+        <h3>Performance Analysis</h3>
+
+        <div class="analytics-grid">
+          <div class="card wide">
+            <h4>District Comparison (Concept Mastery)</h4>
+            <div class="placeholder">
+              Bar / Heatmap chart placeholder
+            </div>
+          </div>
+
+          <div class="card">
+            <h4>Learning Gap Index</h4>
+            <div class="placeholder">
+              Radar / Line chart placeholder
+            </div>
+          </div>
+
+          <div class="card">
+            <h4>Subject-wise Performance</h4>
+            <div class="placeholder">
+              Subject breakdown chart placeholder
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Insights & Recommendations -->
+      <section class="insights">
+        <h3>AI Insights & Recommendations</h3>
+
+        <div class="card">
+          <ul class="insight-list">
+            <li>📌 District B shows weak performance in Fractions (Class 5)</li>
+            <li>📌 Science engagement drops after 20 minutes in Class 8</li>
+            <li>📌 English comprehension gaps detected in rural clusters</li>
+            <li>📌 Targeted teacher training recommended for District C</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • District Analytics & Governance Dashboard</p>
+  </footer>
+
+</body>
+</html>

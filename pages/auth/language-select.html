@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Language • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/auth/language-select.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>AI Learning Platform</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/index.html'">Home</button>
+      <button onclick="location.href='/pages/auth/login.html'">Login</button>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="language-wrapper">
+
+    <!-- Intro -->
+    <section class="intro">
+      <h2>Choose Your Preferred Language</h2>
+      <p>
+        Select the language you are most comfortable with.  
+        Learning content, explanations, and AI guidance will adapt accordingly.
+      </p>
+    </section>
+
+    <!-- Language Selection Grid -->
+    <section class="language-grid">
+
+      <div class="language-card" onclick="selectLanguage('English')">
+        <h3>English</h3>
+        <p>Standard English instruction</p>
+      </div>
+
+      <div class="language-card" onclick="selectLanguage('Hindi')">
+        <h3>हिंदी</h3>
+        <p>हिंदी माध्यम</p>
+      </div>
+
+      <div class="language-card" onclick="selectLanguage('Bengali')">
+        <h3>বাংলা</h3>
+        <p>বাংলা ভাষা</p>
+      </div>
+
+      <div class="language-card" onclick="selectLanguage('Tamil')">
+        <h3>தமிழ்</h3>
+        <p>தமிழ் மொழி</p>
+      </div>
+
+      <div class="language-card" onclick="selectLanguage('Telugu')">
+        <h3>తెలుగు</h3>
+        <p>తెలుగు భాష</p>
+      </div>
+
+      <div class="language-card" onclick="selectLanguage('Marathi')">
+        <h3>मराठी</h3>
+        <p>मराठी भाषा</p>
+      </div>
+
+    </section>
+
+    <!-- Selected Language Info -->
+    <section class="selection-status">
+      <p id="selectedLanguageText">No language selected</p>
+    </section>
+
+    <!-- Actions -->
+    <section class="actions">
+      <button class="secondary" onclick="location.href='/index.html'">
+        Back
+      </button>
+      <button class="primary" onclick="continueNext()">
+        Continue
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Inclusive & Multilingual Learning</p>
+  </footer>
+
+  <!-- ================= SIMPLE FUNCTIONALITY ================= -->
+  <script>
+    let selectedLanguage = "";
+
+    function selectLanguage(language) {
+      selectedLanguage = language;
+
+      const cards = document.querySelectorAll(".language-card");
+      cards.forEach(card => card.classList.remove("active"));
+
+      event.currentTarget.classList.add("active");
+      document.getElementById("selectedLanguageText").innerText =
+        "Selected Language: " + language;
+    }
+
+    function continueNext() {
+      if (!selectedLanguage) {
+        alert("Please select a language to continue");
+        return;
+      }
+
+      // Future backend/localStorage integration point
+      // localStorage.setItem("preferredLanguage", selectedLanguage);
+
+      window.location.href = "/pages/auth/login.html";
+    }
+  </script>
+
+</body>
+</html>

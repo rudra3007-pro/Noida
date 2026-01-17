@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/admin/admin-dashboard.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>Administrator Panel</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/index.html'">Home</button>
+      <button onclick="location.href='/pages/auth/login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= DASHBOARD LAYOUT ================= -->
+  <div class="dashboard-layout">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+      <ul class="menu">
+        <li class="active">Dashboard</li>
+        <li onclick="location.href='/pages/admin/district-reports.html'">District Reports</li>
+        <li>Schools</li>
+        <li>Teachers</li>
+        <li>Students</li>
+        <li>Settings</li>
+      </ul>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="dashboard-content">
+
+      <!-- Overview Section -->
+      <section class="overview">
+        <h2>System Overview</h2>
+
+        <div class="overview-cards">
+          <div class="card">
+            <h3>Total Schools</h3>
+            <p class="metric">128</p>
+          </div>
+
+          <div class="card">
+            <h3>Total Teachers</h3>
+            <p class="metric">1,452</p>
+          </div>
+
+          <div class="card">
+            <h3>Total Students</h3>
+            <p class="metric">34,890</p>
+          </div>
+
+          <div class="card">
+            <h3>Active Today</h3>
+            <p class="metric">8,214</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics Section -->
+      <section class="analytics">
+        <h2>Learning Analytics</h2>
+
+        <div class="analytics-grid">
+          <div class="card wide">
+            <h3>District-wise Performance</h3>
+            <div class="placeholder">
+              Chart / Heatmap will be displayed here
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>At-Risk Schools</h3>
+            <ul class="list">
+              <li>Govt High School – Sector 12</li>
+              <li>Primary School – Block C</li>
+              <li>Model School – Zone 4</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Activity -->
+      <section class="activity">
+        <h2>Recent Activity</h2>
+
+        <div class="card">
+          <ul class="activity-list">
+            <li>New school onboarded: Govt School – Sector 9</li>
+            <li>District B performance report generated</li>
+            <li>Teacher analytics updated</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Administrative Dashboard</p>
+  </footer>
+
+</body>
+</html>

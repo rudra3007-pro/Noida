@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/student/quiz.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>Adaptive Quiz</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/pages/student/student-dashboard.html'">Dashboard</button>
+      <button onclick="location.href='/pages/student/progress.html'">Progress</button>
+      <button onclick="location.href='/pages/auth/login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="quiz-wrapper">
+
+    <!-- Quiz Overview -->
+    <section class="quiz-overview">
+      <h2>Concept Check: Fractions</h2>
+      <p>
+        Answer the questions carefully. The AI adjusts difficulty
+        based on your responses to identify learning gaps.
+      </p>
+    </section>
+
+    <!-- Quiz Status -->
+    <section class="quiz-status">
+      <div class="status-card">
+        <span>Question</span>
+        <strong>3 / 10</strong>
+      </div>
+
+      <div class="status-card">
+        <span>Concept</span>
+        <strong>Equivalent Fractions</strong>
+      </div>
+
+      <div class="status-card">
+        <span>Difficulty</span>
+        <strong>Medium</strong>
+      </div>
+
+      <div class="status-card">
+        <span>Time Left</span>
+        <strong>04:32</strong>
+      </div>
+    </section>
+
+    <!-- Question Card -->
+    <section class="question-card">
+      <h3>
+        Which of the following fractions is equivalent to
+        <strong>2 / 4</strong>?
+      </h3>
+
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="answer">
+          <span>1 / 4</span>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="answer">
+          <span>3 / 4</span>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="answer">
+          <span>1 / 2</span>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="answer">
+          <span>4 / 2</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- AI Hint -->
+    <section class="ai-hint card">
+      <h4>AI Hint</h4>
+      <p>
+        Try simplifying the fraction by dividing
+        the numerator and denominator by the same number.
+      </p>
+    </section>
+
+    <!-- Quiz Actions -->
+    <section class="quiz-actions">
+      <button class="secondary">
+        Skip
+      </button>
+
+      <button class="primary">
+        Submit Answer
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Adaptive Assessment Engine</p>
+  </footer>
+
+</body>
+</html>

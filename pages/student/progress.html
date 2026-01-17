@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/student/progress.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>Learning Progress</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/pages/student/student-dashboard.html'">Dashboard</button>
+      <button onclick="location.href='/pages/student/learning-path.html'">Learning Path</button>
+      <button onclick="location.href='/pages/auth/login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="progress-wrapper">
+
+    <!-- Overview -->
+    <section class="progress-overview">
+      <h2>Your Learning Progress</h2>
+      <p>
+        Track your concept mastery, time spent, and improvement trends
+        over time. This data helps the AI personalize your learning journey.
+      </p>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="metrics">
+
+      <div class="metric-card">
+        <h3>Overall Mastery</h3>
+        <p class="metric">68%</p>
+        <span class="note">Based on concept-level accuracy</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Concepts Completed</h3>
+        <p class="metric">9 / 14</p>
+        <span class="note">Across current chapter</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Learning Streak</h3>
+        <p class="metric">6 Days</p>
+        <span class="note">Keep the streak alive</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Avg Time / Day</h3>
+        <p class="metric">38 min</p>
+        <span class="note">Last 7 days</span>
+      </div>
+
+    </section>
+
+    <!-- Concept Progress -->
+    <section class="concept-progress">
+      <h3>Concept-wise Progress</h3>
+
+      <div class="concept-card completed">
+        <div class="concept-info">
+          <h4>Understanding Fractions</h4>
+          <p>Basics and real-life examples</p>
+        </div>
+        <div class="concept-status">Completed</div>
+      </div>
+
+      <div class="concept-card completed">
+        <div class="concept-info">
+          <h4>Numerator & Denominator</h4>
+          <p>Identifying parts of a fraction</p>
+        </div>
+        <div class="concept-status">Completed</div>
+      </div>
+
+      <div class="concept-card in-progress">
+        <div class="concept-info">
+          <h4>Equivalent Fractions</h4>
+          <p>Same value, different representation</p>
+        </div>
+        <div class="concept-status">In Progress</div>
+      </div>
+
+      <div class="concept-card locked">
+        <div class="concept-info">
+          <h4>Comparing Fractions</h4>
+          <p>Greater than or less than</p>
+        </div>
+        <div class="concept-status">Locked</div>
+      </div>
+
+    </section>
+
+    <!-- Time Analysis -->
+    <section class="time-analysis card">
+      <h3>Time Spent Analysis</h3>
+      <div class="placeholder">
+        Weekly time-spent chart placeholder
+      </div>
+      <p class="hint">
+        Consistent daily practice improves long-term retention.
+      </p>
+    </section>
+
+    <!-- AI Insights -->
+    <section class="ai-insights card">
+      <h3>AI Insights</h3>
+      <ul>
+        <li>📌 You learn best between 6 PM – 8 PM</li>
+        <li>📌 Fractions concepts require slightly more revision</li>
+        <li>📌 Practice accuracy improves after short breaks</li>
+      </ul>
+    </section>
+
+    <!-- Actions -->
+    <section class="progress-actions">
+      <button class="secondary" onclick="location.href='/pages/student/learning-path.html'">
+        Continue Learning
+      </button>
+      <button class="primary" onclick="location.href='/pages/student/quiz.html'">
+        Practice Quiz
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Student Progress Analytics</p>
+  </footer>
+
+</body>
+</html>

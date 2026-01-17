@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/teacher/teacher-dashboard.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>Teacher Dashboard</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/pages/teacher/class-analytics.html'">Class Analytics</button>
+      <button onclick="location.href='/pages/auth/login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="teacher-wrapper">
+
+    <!-- Welcome -->
+    <section class="welcome-section">
+      <h2>Good Morning 👋</h2>
+      <p>
+        Here’s an overview of your classes and
+        AI-assisted teaching insights.
+      </p>
+    </section>
+
+    <!-- Quick Overview Metrics -->
+    <section class="metrics">
+
+      <div class="metric-card">
+        <h3>Assigned Classes</h3>
+        <p class="metric">3</p>
+        <span class="note">Class 6 & 7</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Total Students</h3>
+        <p class="metric">92</p>
+        <span class="note">Across subjects</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>At-Risk Students</h3>
+        <p class="metric">11</p>
+        <span class="note">Need intervention</span>
+      </div>
+
+      <div class="metric-card">
+        <h3>Strong Concepts</h3>
+        <p class="metric">5</p>
+        <span class="note">High mastery areas</span>
+      </div>
+
+    </section>
+
+    <!-- Class Snapshot -->
+    <section class="class-snapshot card">
+      <h3>Class Snapshot</h3>
+
+      <div class="snapshot-row">
+        <span>Class 6 • Mathematics</span>
+        <strong>61% Mastery</strong>
+      </div>
+
+      <div class="snapshot-row">
+        <span>Class 7 • Mathematics</span>
+        <strong>65% Mastery</strong>
+      </div>
+    </section>
+
+    <!-- AI Teaching Suggestions -->
+    <section class="ai-insights card">
+      <h3>AI Teaching Suggestions</h3>
+      <ul>
+        <li>📌 Focus on <strong>Comparing Fractions</strong> in Class 6</li>
+        <li>📌 Use bilingual explanations for 8 students</li>
+        <li>📌 Short concept quizzes improve retention</li>
+      </ul>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="teacher-actions">
+      <button class="secondary" onclick="location.href='/pages/teacher/class-analytics.html'">
+        View Class Analytics
+      </button>
+
+      <button class="primary">
+        Plan Intervention
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Teacher-Assistive AI System</p>
+  </footer>
+
+</body>
+</html>

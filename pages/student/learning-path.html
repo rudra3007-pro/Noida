@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Path • NOIDA Platform</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/styles/student/learning-path.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo-area">
+      <h1>NOIDA</h1>
+      <span>Personalized Learning Path</span>
+    </div>
+
+    <nav class="nav-actions">
+      <button onclick="location.href='/pages/student/student-dashboard.html'">Dashboard</button>
+      <button onclick="location.href='/pages/auth/login.html'">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="learning-wrapper">
+
+    <!-- Intro Section -->
+    <section class="intro">
+      <h2>Your AI-Curated Learning Path</h2>
+      <p>
+        This learning path is dynamically generated based on your diagnostic
+        assessment, past performance, and concept mastery.
+      </p>
+    </section>
+
+    <!-- Progress Overview -->
+    <section class="path-progress">
+      <h3>Overall Progress</h3>
+
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 68%;"></div>
+      </div>
+
+      <p class="progress-text">68% completed • Keep going!</p>
+    </section>
+
+    <!-- Learning Path Timeline -->
+    <section class="path-timeline">
+
+      <h3>Concept-wise Journey</h3>
+
+      <!-- Completed Concept -->
+      <div class="path-item completed">
+        <div class="status">✓</div>
+        <div class="details">
+          <h4>Understanding Fractions</h4>
+          <p>Basics of fractions and real-life examples</p>
+          <span class="tag completed">Completed</span>
+        </div>
+      </div>
+
+      <!-- Completed Concept -->
+      <div class="path-item completed">
+        <div class="status">✓</div>
+        <div class="details">
+          <h4>Numerator & Denominator</h4>
+          <p>Identifying parts of a fraction</p>
+          <span class="tag completed">Completed</span>
+        </div>
+      </div>
+
+      <!-- Current Concept -->
+      <div class="path-item current">
+        <div class="status">▶</div>
+        <div class="details">
+          <h4>Equivalent Fractions</h4>
+          <p>Understanding equivalent values using visual models</p>
+          <span class="tag current">In Progress</span>
+
+          <div class="actions">
+            <button onclick="location.href='/pages/student/lesson.html'">Start Lesson</button>
+            <button class="secondary" onclick="location.href='/pages/student/quiz.html'">Practice</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Locked Concept -->
+      <div class="path-item locked">
+        <div class="status">🔒</div>
+        <div class="details">
+          <h4>Comparing Fractions</h4>
+          <p>Which fraction is bigger or smaller?</p>
+          <span class="tag locked">Locked</span>
+        </div>
+      </div>
+
+      <!-- Locked Concept -->
+      <div class="path-item locked">
+        <div class="status">🔒</div>
+        <div class="details">
+          <h4>Operations on Fractions</h4>
+          <p>Addition and subtraction of fractions</p>
+          <span class="tag locked">Locked</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- AI Recommendation -->
+    <section class="ai-recommendation card">
+      <h3>AI Recommendation</h3>
+      <p>
+        You are progressing well, but similar learners struggled with
+        <strong>Equivalent Fractions</strong>.  
+        Spend at least <strong>15 minutes</strong> on practice before moving ahead.
+      </p>
+
+      <button onclick="location.href='/pages/student/lesson.html'">
+        Follow Recommendation
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 NOIDA • Personalized Learning Engine</p>
+  </footer>
+
+</body>
+</html>
